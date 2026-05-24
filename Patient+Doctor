@@ -1,0 +1,48 @@
+#Module: Patient and Doctor Classes#
+
+class Patient:
+    def _init_(self, patient_id, name, phone, date_of_birth, gender):
+        self.patient_id = patient_id
+        self.name = name
+        self.phone = phone
+        self.date_of_birth = date_of_birth
+        self.gender = gender
+
+    def get_patient_info(self):
+        return self.patient_id
+
+    def display_patient_info(self):
+        print("=== Patient Information ===")
+        print(f"ID: {self.patient_id}")
+        print(f"Name: {self.name}")
+        print(f"Phone: {self.phone}")
+        print(f"DOB: {self.date_of_birth}")
+        print(f"Gender: {self.gender}")
+        print("---------------------------")
+
+class Doctor:
+    def _init_(self, doctor_id, name, specialization, office_number):
+        self.doctor_id = doctor_id
+        self.name = name
+        self.specialization = specialization
+        sself.office_number = office_number
+
+    def get_doctor_id(self):
+        return self.doctor_id
+
+    def display_doctor_info(self):
+        print("=== Doctor Information ===")
+        print(f"ID: {self.doctor_id}")
+        print(f"Name: {self.name}")
+        print(f"Specialization: {self.specialization}")
+        print(f"Office: {self.office_number}")
+        print("--------------------------")
+
+#Test
+if _name_== "_main_":
+    patient1 = Patient(101, "Amy", "123456778", "1991-03-02", "Female")
+    patient1.display_patient_info()
+
+    doctor1 =Doctor(201, "Bob", "Cardiology", "Room 301")
+    doctor1.display_doctor_info()
+
