@@ -41,7 +41,7 @@ class Prescription:
             "date": self.date
         }
 
-    def get_medicine_cost(self):
+    def get_total_med_cost(self):
         cost_per_day = 50
         return cost_per_day * self.duration
 
