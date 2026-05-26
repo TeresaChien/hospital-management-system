@@ -25,14 +25,14 @@ class MedicalRecordManager:
     def __init__(self):
         self.records = {} 
 
-    def create_record(self, patient_id: str, doctor_id: str, diagnosis: str, treatments: str) -> MedicalRecord:
-        record_id = f"REC{len(self.records) + 1:04d}" 
-        new_record = MedicalRecord(record_id, patient_id, doctor_id, diagnosis, treatments)
-        self.records[record_id] = new_record
-        return new_record
+    def create_record(self, patient: Patient, doctor: Doctor, diagnosis: str, treatments: str, prescription=None) -> MedicalRecord:
+    record_id = f"REC{len(self.records) + 1:04d}" 
+    new_record = MedicalRecord(record_id, patient, doctor, diagnosis, treatments, prescription)
+    self.records[record_id] = new_record
+    return new_record
 
     def get_patient_history(self, patient_id: str) -> list:
-        return [rec for rec in self.records.values() if rec.patient_id == patient_id]
+        return [rec for rec in self.records.values() if rec.patient.patient_id == patient_id]
 
 # Test
 if __name__ == "__main__":
